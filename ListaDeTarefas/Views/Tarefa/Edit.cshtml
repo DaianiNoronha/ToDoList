@@ -1,0 +1,44 @@
+﻿@model Tarefa
+
+<h2>Editar Tarefa</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="TarefaId" />
+    <div class="form-group">
+        <label asp-for="NomeTarefa" class="control-label">Nome da Tarefa</label>
+        <input asp-for="NomeTarefa" class="form-control" />
+        <span asp-validation-for="NomeTarefa" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoriaId" class="control-label">Categoria</label>
+        <input asp-for="CategoriaId" class="form-control" />
+        <span asp-validation-for="CategoriaId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Descricao" class="control-label">Descrição da Tarefa</label>
+        <input asp-for="Descricao" class="form-control" />
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataDeInicio" class="control-label">Data de Início</label>
+        <input asp-for="DataDeInicio" class="form-control" />
+        <span asp-validation-for="DataDeInicio" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataDeVencimento" class="control-label">Data de Vencimento</label>
+        <input asp-for="DataDeVencimento" class="form-control" />
+        <span asp-validation-for="DataDeVencimento" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <select asp-for="Status" asp-validation-for="Status">
+            <option value="to-do">To Do</option>
+            <option value="done">Done</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    <a href="~/Tarefa" class="btn btn-dark">Voltar para Tarefa</a>
+</form>

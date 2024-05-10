@@ -1,0 +1,44 @@
+﻿@model List<Tarefa>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<h2>Lista de Tarefas</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Adicionar Tarefa</a>
+</p>
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>TarefaId</th>
+            <th>Nome da tarefa</th>
+            <th>Categoria</th>
+            <th>Descrição</th>
+            <th>Data de Inicio</th>
+            <th>Data de Vencimento</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tarefa in Model)
+        {
+            <tr>
+                <td>@tarefa.TarefaId</td>
+                <td>@tarefa.NomeTarefa</td>
+                <td>@tarefa.CategoriaId</td>
+                <td>@tarefa.Descricao</td>
+                <td>@tarefa.DataDeInicio</td>
+                <td>@tarefa.DataDeVencimento</td>
+                <td>@tarefa.Status</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-action="Edit" class="btn btn-primary" asp-route-id="@tarefa.TarefaId"><i class="bi bi-pencil-fill"></i></a>
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@tarefa.TarefaId"><i class="bi bi-trash3-fill"></i></a>
+                        <a asp-action="Detalhes" class="btn btn-info" asp-route-id="@tarefa.TarefaId"><i class="bi bi-card-checklist"></i></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

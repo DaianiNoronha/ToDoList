@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+    body {
+        background-image: url('/assets/img2g.jpg'); /* Caminho absoluto para a imagem */
+        background-repeat: no-repeat;
+        background-size: cover; /* Ajusta a imagem para cobrir todo o corpo */
+    }
+</style>
+
+<body>
+    <div class="container text-center">
+        <h1 class="display-4">Bem-vindo</h1>
+        <h1>É hora de se organizar.</h1>
+        <p class="paragrafo">
+            Gestão de tarefas é o elo entre o planejamento e a execução. A chave para o sucesso. Nosso sistema de Gerenciamento de Tarefas
+            permite que você adicione uma tarefa a ser realizada por categoria e data de término, além disso você também poderá fazer o seu
+            check list e marcar cada tarefa como "concluída". Tá esperando o que? Comece a se organizar e adione suas tarefas!
+        </p>
+        <!-- Botão para a página Tarefa -->
+        <a href="~/Tarefa" class="btn btn-dark">Ver Tarefas</a>
+    </div>
+</body>
+

@@ -1,0 +1,42 @@
+﻿@model Tarefa
+
+<h2>Adicionar Tarefa</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="NomeTarefa" class="control-label">Nome da Tarefa</label>
+        <input asp-for="NomeTarefa" class="form-control" />
+        <span asp-validation-for="NomeTarefa" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoriaId" class="control-label">Categoria</label>
+        <input asp-for="CategoriaId" class="form-control" />
+        <span asp-validation-for="CategoriaId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Descricao" class="control-label">Descrição da Tarefa</label>
+        <input asp-for="Descricao" class="form-control" />
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataDeInicio" class="control-label">Data de Início</label>
+        <input asp-for="DataDeInicio" class="form-control" />
+        <span asp-validation-for="DataDeInicio" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataDeVencimento" class="control-label">Data de Vencimento</label>
+        <input asp-for="DataDeVencimento" class="form-control" />
+        <span asp-validation-for="DataDeVencimento" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <select asp-for="Status">
+            <option value="to-do">To Do</option>
+            <option value="done">Done</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+    <a href="~/Tarefa" class="btn btn-dark">Voltar</a>
+</form>
